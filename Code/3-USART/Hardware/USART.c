@@ -21,6 +21,8 @@ void usart_config(void){
     uint32_t usart_stop_bit = USART_STB_1BIT; //停止位1位
     uint32_t usart_data_first = USART_MSBF_LSB; //小端模式
     uint32_t usart_transmit = USART_TRANSMIT_ENABLE; //使能发送
+    uint32_t usart_receive = USART_RECEIVE_ENABLE; //使能接收
+    uint32_t usart_nvic_irq = USART0_IRQn; //串口0中断
 
     //设置TX
     rcu_periph_clock_enable(TX_rcu); //使能GPIOA时钟
@@ -40,7 +42,13 @@ void usart_config(void){
     usart_word_length_set(usart_periph, usart_word_length); //设置数据位为8位
     usart_stop_bit_set(usart_periph, usart_stop_bit); //设置停止位为1位
     usart_data_first_config(usart_periph, usart_data_first); //小端模式
+
     usart_transmit_config(usart_periph, usart_transmit); //使能发送
+    usart_receive_config(usart_periph, usart_receive); //使能接收
+    //中断配置
+    nvic_irq_enable(USART0_IRQn, 2, 2); //使能串口0中断
+    usart_interrupt_enable(usart_periph, USART_INT_RBNE); //使能接收中断
+    usart_interrupt_enable(usart_periph, USART_INT_IDLE); //使能闲置中断
     //使能串口
     usart_enable(usart_periph);
 }
