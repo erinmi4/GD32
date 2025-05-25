@@ -1,6 +1,22 @@
 #include "EXTI0.h"
 
-void Exti0_Init(void){
+void Exti0_Soft_Init(void){
+    //外部中断配置
+	uint32_t exti = EXTI_0;
+	uint32_t exti_irq = EXTI0_IRQn;
+
+    //外部中断初始化
+    //rcu
+    rcu_periph_clock_enable(RCU_SYSCFG);
+    //exti
+    exti_init(exti, EXTI_INTERRUPT, EXTI_TRIG_NONE);
+
+    // 中断优先级
+    nvic_irq_enable(exti_irq, 2, 2);
+    // 外部中断函数
+    exti_interrupt_enable(exti);
+}
+void Exti0_Hard_Init(void){
     //引脚配置
     uint32_t RCU_GPIO = RCU_GPIOA; //选择GPIOA
     uint32_t GPIO_port = GPIOA; //选择GPIOA端口
