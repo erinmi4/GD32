@@ -10,6 +10,7 @@
                 "d:\\GD32\\Code\\4-GD32中断按键\\Hardware",
                 "d:\\GD32\\Code\\4-GD32中断按键\\MiddleWare",
                 "d:\\GD32\\Code\\4-GD32中断按键\\MiddleWare\\USART",
+                "d:\\GD32\\Code\\4-GD32中断按键\\MiddleWare\\EXTI",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux_compat",

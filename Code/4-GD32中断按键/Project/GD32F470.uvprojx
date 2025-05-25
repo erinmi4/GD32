@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F470</Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS;..\Hardware;..\MiddleWare;..\MiddleWare\USART</IncludePath>
+              <IncludePath>..\User;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS;..\Hardware;..\MiddleWare;..\MiddleWare\USART;..\MiddleWare\EXTI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -439,6 +439,16 @@
               <FileType>1</FileType>
               <FilePath>..\Firmware\GD32F4xx_standard_peripheral\Source\gd32f4xx_usart.c</FilePath>
             </File>
+            <File>
+              <FileName>gd32f4xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Firmware\GD32F4xx_standard_peripheral\Source\gd32f4xx_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>gd32f4xx_syscfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Firmware\GD32F4xx_standard_peripheral\Source\gd32f4xx_syscfg.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -488,6 +498,16 @@
               <FileName>Usart0.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\MiddleWare\USART\Usart0.h</FilePath>
+            </File>
+            <File>
+              <FileName>EXTI0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\EXTI\EXTI0.c</FilePath>
+            </File>
+            <File>
+              <FileName>EXTI0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\MiddleWare\EXTI\EXTI0.h</FilePath>
             </File>
           </Files>
         </Group>

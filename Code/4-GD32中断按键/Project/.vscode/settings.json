@@ -8,6 +8,7 @@
         "systick.h": "c",
         "gd32f4xx_misc.h": "c",
         "cstdint": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "usart0.h": "c"
     }
 }
