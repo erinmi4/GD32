@@ -29,9 +29,19 @@ void Exti0_Init(void){
     exti_interrupt_enable(EXTI_LINE); //使能外部中断0
 }
 
+FlagStatus pre = RESET; //定义一个标志位，用于记录上一次中断状态
+
 void EXTI0_IRQHandler(void) {
     if (exti_interrupt_flag_get(EXTI_0)) { //检查外部中断0是否触发
-        exti_interrupt_flag_clear(EXTI_0); //清除外部中断0标志
-        printf("hello \r\n"); //打印中断触发信息
+        FlagStatus current = gpio_input_bit_get(GPIOA, GPIO_PIN_0); //获取PA0的当前状态
+        if (current != pre) { //如果当前状态与上一次状态不同
+            pre = current; //更新上一次状态
+            if (current == SET) {
+                printf("PA0 is pressed!\n"); //打印按下信息
+            } else {
+                printf("PA0 is released!\n"); //打印释放信息
+            }
+        }
+        exti_interrupt_flag_clear(EXTI_0); //清除外部中断标志位
     }
 }

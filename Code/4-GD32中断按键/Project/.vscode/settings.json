@@ -9,6 +9,8 @@
         "gd32f4xx_misc.h": "c",
         "cstdint": "c",
         "stdio.h": "c",
-        "usart0.h": "c"
+        "usart0.h": "c",
+        "exti0.h": "c",
+        "gd32f4xx_gpio.h": "c"
     }
 }
