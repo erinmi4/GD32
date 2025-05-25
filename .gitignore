@@ -1,0 +1,47 @@
+# 排除大文件（通常大于50MB的文件类型）
+# 视频文件
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+
+# 压缩文件和安装包
+*.iso
+*.dmg
+*.exe
+*.bin
+*.img
+*.tar
+*.gz
+*.zip
+*.rar
+*.7z
+
+# 数据库文件
+*.mdb
+*.sqlite
+*.db
+
+# 常见的编译输出目录
+**/Debug/
+**/Release/
+**/Objects/
+**/Listings/
+
+# Keil MDK生成的临时文件
+**/*.uvguix.*
+**/*.uvoptx.bak
+**/*.scvd
+**/*.dep
+
+# 备份文件
+**/*.bak
+**/*.orig
+**/*.log
+
+# VSCode配置文件(可选，如果您希望共享VSCode配置，则移除这些行)
+# **/.vscode/
+
+05-阶段课件/

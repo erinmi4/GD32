@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "stdio.h": "c",
+        "systick.h": "c",
+        "gd32f4xx.h": "c",
+        "*.h": "c",
+        "*.c": "c"
+    },
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/User",
+        "${workspaceFolder}/Firmware/CMSIS",
+        "${workspaceFolder}/Firmware/CMSIS/GD/GD32F4xx/Include",
+        "${workspaceFolder}/Firmware/GD32F4xx_standard_peripheral/Include"
+    ],
+    "C_Cpp.default.defines": [
+        "USE_STDPERIPH_DRIVER",
+        "GD32F470"
+    ],
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.intelliSenseEngine": "default"
+}
