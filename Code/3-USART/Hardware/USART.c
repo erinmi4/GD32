@@ -70,3 +70,11 @@ int fputc(int ch, FILE *f){
     usart_send_data((uint8_t)ch); //发送数据
     return ch;
 }
+
+void USART0_IRQHandler(void){
+    //受到数据，打印hello
+    if(SET == usart_interrupt_flag_get(USART0, USART_INT_FLAG_RBNE)){
+        printf("RBNE\r\n"); //打印hello
+        usart_interrupt_flag_clear(USART0, USART_INT_FLAG_RBNE); //清除中断标志
+    }
+}

@@ -11,7 +11,7 @@ int main(void)
     usart_config(); //配置串口
     uint16_t cnt = 0;
     while(1) {
-        printf("Hello World! %d\n", cnt++); //打印数据
-        delay_1ms(1000); //延时1秒
+        //printf("Hello World! %d\n", cnt++); //打印数据
+        //delay_1ms(1000); //延时1秒
     }
 }
