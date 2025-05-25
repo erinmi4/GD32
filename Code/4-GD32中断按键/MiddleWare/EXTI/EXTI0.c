@@ -30,10 +30,15 @@ void Exti0_Init(void){
 }
 
 FlagStatus pre = RESET; //定义一个标志位，用于记录上一次中断状态
+uint32_t pre_tick = 0; //定义一个变量，用于记录上一次中断时间
 
 void EXTI0_IRQHandler(void) {
     if (exti_interrupt_flag_get(EXTI_0)) { //检查外部中断0是否触发
-        FlagStatus current = gpio_input_bit_get(GPIOA, GPIO_PIN_0); //获取PA0的当前状态
+        //获取当前时间
+        uint32_t current_tick = systick_tick_us(); //获取当前时间
+        if (current_tick - pre_tick > 20 * 0000) { //如果距离上次中断时间超过20ms
+            pre_tick = current_tick; //更新上一次中断时间
+            FlagStatus current = gpio_input_bit_get(GPIOA, GPIO_PIN_0); //获取PA0的当前状态
         if (current != pre) { //如果当前状态与上一次状态不同
             pre = current; //更新上一次状态
             if (current == SET) {
@@ -41,6 +46,9 @@ void EXTI0_IRQHandler(void) {
             } else {
                 printf("PA0 is released!\n"); //打印释放信息
             }
+        }
+        } else {
+            return; //如果没有超过100ms，则返回
         }
         exti_interrupt_flag_clear(EXTI_0); //清除外部中断标志位
     }
