@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F470</Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS;..\Hardware</IncludePath>
+              <IncludePath>..\User;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS;..\Hardware;..\MiddleWare;..\MiddleWare\USART</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -464,16 +464,6 @@
               <FileType>5</FileType>
               <FilePath>..\Hardware\key.h</FilePath>
             </File>
-            <File>
-              <FileName>USART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Hardware\USART.c</FilePath>
-            </File>
-            <File>
-              <FileName>USART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Hardware\USART.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -483,6 +473,21 @@
               <FileName>readme.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\Doc\readme.txt</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MiddleWare</GroupName>
+          <Files>
+            <File>
+              <FileName>Usart0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MiddleWare\USART\Usart0.c</FilePath>
+            </File>
+            <File>
+              <FileName>Usart0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\MiddleWare\USART\Usart0.h</FilePath>
             </File>
           </Files>
         </Group>

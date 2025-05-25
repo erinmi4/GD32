@@ -8,6 +8,8 @@
                 "d:\\GD32\\Code\\3-USART\\Firmware\\GD32F4xx_standard_peripheral\\Include",
                 "d:\\GD32\\Code\\3-USART\\Firmware\\CMSIS",
                 "d:\\GD32\\Code\\3-USART\\Hardware",
+                "d:\\GD32\\Code\\3-USART\\MiddleWare",
+                "d:\\GD32\\Code\\3-USART\\MiddleWare\\USART",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux",
                 "D:\\Keil_v5\\ARM\\ARMCLANG\\include\\arm_linux_compat",
