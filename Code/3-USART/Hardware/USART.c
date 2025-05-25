@@ -1,5 +1,9 @@
 #include "USART.h"
 
+//定义全局变量
+uint8_t rx_buffer[RX_BUFFER_SIZE];//接收缓冲区
+uint32_t rx_cnt = 0;//接收计数
+
 //配置串口0
 void usart_config(void){
     //设置TX
@@ -72,9 +76,26 @@ int fputc(int ch, FILE *f){
 }
 
 void USART0_IRQHandler(void){
-    //受到数据，打印hello
+    //受到数据，打印hello   
     if(SET == usart_interrupt_flag_get(USART0, USART_INT_FLAG_RBNE)){
-        printf("RBNE\r\n"); //打印hello
-        usart_interrupt_flag_clear(USART0, USART_INT_FLAG_RBNE); //清除中断标志
+        uint8_t data = usart_data_receive(USART0); //接收数据
+        rx_buffer[rx_cnt++] = data; //存入接收缓冲区
+        if(rx_cnt >= RX_BUFFER_SIZE){ //如果接收缓冲区满了
+            rx_cnt = 0; //清空接收计数
+        }
     }
+    //闲置中断
+    if (SET == usart_interrupt_flag_get(USART0, USART_INT_FLAG_IDLE))
+    {
+        usart_data_receive(USART0); //清除闲置中断标志
+        //可以在这里处理闲置事件
+        	rx_buffer[rx_cnt] = '\0';//防止脏数据
+		
+			//处理缓冲区里面的内容
+			printf("%s", rx_buffer);
+		
+			//清理缓冲区
+			rx_cnt = 0;
+    }
+    
 }
