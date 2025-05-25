@@ -142,3 +142,10 @@ void USART0_IRQHandler(void) {
         rx_cnt = 0;
     }
 }
+
+// void Usart0_on_recv(uint8_t* data, uint32_t len) {
+
+//     printf("recv: %s\r\n", data);
+// 	//	手动触发中断
+// 	exti_software_interrupt_enable(EXTI_0);
+// }

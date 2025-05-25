@@ -16,6 +16,8 @@ void Exti0_Soft_Init(void){
     // 外部中断函数
     exti_interrupt_enable(exti);
 }
+
+
 void Exti0_Hard_Init(void){
     //引脚配置
     uint32_t RCU_GPIO = RCU_GPIOA; //选择GPIOA
@@ -70,3 +72,4 @@ void EXTI0_IRQHandler(void) {
         exti_interrupt_flag_clear(EXTI_0); //清除外部中断标志位
     }
 }
+

@@ -10,7 +10,7 @@ int main(void)
 {
     systick_config();
     Usart0_init(); //初始化串口
-    Exti0_Hard_Init(); //初始化外部中断
+
 
     while(1) {
         //printf("Hello World! %d\n", cnt++); //打印数据
