@@ -39,7 +39,7 @@ OF SUCH DAMAGE.
 #include "systick.h"
 
 volatile static uint32_t delay;
-
+volatile static uint32_t tick;
 /*!
     \brief    configure systick
     \param[in]  none
@@ -80,6 +80,7 @@ void delay_1ms(uint32_t count)
 */
 void delay_decrement(void)
 {
+    tick++;
     if(0U != delay) {
         delay--;
     }
@@ -91,4 +92,9 @@ void delay_1us(uint32_t count)
 
     while(0U != delay) {
     }
+}
+
+uint32_t systick_tick_us(void)
+{
+    return tick;
 }
