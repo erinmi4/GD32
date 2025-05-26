@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "exti.h": "c",
+        "systick.h": "c",
+        "gd32f4xx_timer.h": "c",
+        "timer.h": "c"
+    }
+}
